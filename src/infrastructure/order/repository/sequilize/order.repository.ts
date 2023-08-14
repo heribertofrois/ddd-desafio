@@ -53,7 +53,7 @@ export default class OrderRepository implements OrderRepositoryInterface{
     });
     const itens:OrderItem[]=[]
     orderModel.items.forEach(function (value) {
-      itens.push(new OrderItem(value.id,value.product.name,value.product.price,value.product.id,value.quantity)) 
+      itens.push(new OrderItem(value.id,value.name,value.price,value.product_id,value.quantity)) 
     }); 
 
     return new Order(orderModel.id,orderModel.customer_id,itens);
